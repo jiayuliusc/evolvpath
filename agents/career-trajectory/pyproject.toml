@@ -1,0 +1,40 @@
+[project]
+name = "demoagent"
+version = "0.1.0"
+description = "PathFinder — Career Trajectory Agent (uAgent on ASI:One, Chat Protocol, mailbox)"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "uagents>=0.25",
+    "uagents-core>=0.4.9",
+    "langchain>=1.0",
+    "langchain-openai>=1.0",
+    "httpx",
+    "python-dotenv",
+    "pypdf>=7.1.1",
+    "python-docx>=1.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint.per-file-ignores]
+# AGENTS.md §5: tools return JSON strings and never raise; optional O*NET grounding
+# steps intentionally swallow their own errors.
+"brain.py" = ["BLE001", "S110"]
+# onet.py: each benchmark sub-fetch degrades independently into unavailable_fields
+# (documented behavior); resume.py: adapter boundary returns structured errors.
+"onet.py" = ["BLE001", "S110"]
+"resume.py" = ["BLE001"]

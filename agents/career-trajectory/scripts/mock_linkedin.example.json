@@ -1,0 +1,32 @@
+{
+  "name": "Your Name",
+  "headline": "Senior Data Analyst",
+  "location": "Boston, MA",
+  "skills": ["SQL", "Python", "Tableau", "Statistics"],
+  "education": [
+    {"school": "Northeastern", "degree": "BSc", "field": "Bioinformatics", "end": "2019"}
+  ],
+  "experiences": [
+    {
+      "title": "Data Analyst",
+      "company": "Acme Labs",
+      "start": "2019-07",
+      "end": "2022-03",
+      "skills": ["SQL", "Excel"]
+    },
+    {
+      "title": "Senior Data Analyst",
+      "company": "Acme Labs",
+      "start": "2022-03",
+      "end": "present",
+      "skills": ["SQL", "Python", "Statistics"]
+    }
+  ],
+  "target_roles": ["Data Scientist"],
+  "preferences": {
+    "remote_preference": "remote",
+    "timeline_months": 12,
+    "available_hours_per_week": 10
+  },
+  "source_metadata": [{"source": "mock-linkedin", "note": "hand-written stand-in for the real integration"}]
+}
